@@ -1,0 +1,2 @@
+(reason = "stopped before use" IMPLIES dbUsed(id,_,_) IMPLIES ((NOT modelUse(id, 0)) SINCE modelUse(id, 1))) AND
+(reason = "no stop found" IMPLIES modelUse(id, 1) IMPLIES EVENTUALLY[0,5] modelUse(id, 0))

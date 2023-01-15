@@ -1,0 +1,65 @@
+.card {
+  margin-top: 1em;
+  height: 60vh;
+}
+
+div#app_title {
+  min-width: max-content;
+  color: white;
+}
+
+.tooltip-target {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dash-graph {
+  height: 100%;
+}
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f4f4f4;
+  color: #333333;
+  /* font-size: 1.5em; */
+  margin: 0px;
+  overflow-x: hidden;
+}
+.banner {
+  height: 3.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.banner Img {
+  position: relative;
+  height: 2rem;
+  width: auto;
+  margin-left: 2%;
+}
+
+H5 {
+    color: #3297a5;
+  }
+  H5, H3 {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+#howto-open {
+    background-color: #e36f32;
+    color: #fff;
+}
+
+.text-danger {
+  color: #e36f32 !important;
+}
+
+.card-header {
+  background-color: #494949;
+  color: #fff;
+}

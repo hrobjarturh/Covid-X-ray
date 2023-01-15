@@ -1,0 +1,4 @@
+(reason = "stopped before use" IMPLIES dbUsed(id,_,_,_) IMPLIES ((NOT modelUse(id, "endDate")) SINCE modelUse(id, "startDate"))) AND
+(reason = "no stop found" IMPLIES modelUse(id, "startDate") IMPLIES EVENTUALLY[0,60] modelUse(id, "endDate")) AND
+(reason = "no verification / too late verification" IMPLIES dbUsed(id,_,1,_) IMPLIES EVENTUALLY[0,1d] externalVerification(id,_)) AND
+(reason = "both verifications made by same user" IMPLIES FORALL user1. user2. verification(id,user1,user2) IMPLIES NOT user1 = user2)

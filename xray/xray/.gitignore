@@ -1,0 +1,15 @@
+venv
+*venv
+*.venv
+
+*.o
+_build
+/monpoly*.install
+
+*~
+\#*\#
+
+/thys/*/*.ocaml
+.DS_Store
+.vscode
+libmonpoly.install

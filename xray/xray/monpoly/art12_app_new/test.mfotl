@@ -1,0 +1,4 @@
+(reason = "violation: time of use not found" IMPLIES dbUsed(id,_,_,_) IMPLIES (NOT modelUse(id, "endDate") SINCE modelUse(id, "startDate"))) AND
+(reason = "violation: no stop found" IMPLIES modelUse(id, "startDate") IMPLIES EVENTUALLY[0,10] modelUse(id, "endDate")) AND
+(reason = "violation: no initial verification" IMPLIES dbUsed(id,_,1,_) IMPLIES EVENTUALLY[0,5] initialVerification(id,_)) AND
+(reason = "violation: no external verification" IMPLIES dbUsed(id,_,1,_) IMPLIES EVENTUALLY[0,5] externalVerification(id,_))

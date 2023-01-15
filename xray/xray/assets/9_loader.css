@@ -1,0 +1,121 @@
+
+
+
+/* Local (small circle loaders) */
+/* TODO: Make variable in size according to container */
+
+.local-loader-spinner-sm {
+    transform: scale(0.5);
+}
+
+.local-loader-spinner {
+    /* Default */
+}
+
+/* Local (image) for medium size and up */
+/* local-loader-img */
+.local-loader-img {
+    position: relative;
+}
+*[class="local-loader-img"][data-dash-is-loading="true"]{
+    visibility: hidden; /* Sets visibility of content */
+}
+/* Backdrop */
+*[class="local-loader-img"][data-dash-is-loading="true"]::before{
+    content: "";
+    visibility: visible;
+    background-color: #0000004d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+/* Loading animation */
+*[class="local-loader-img"][data-dash-is-loading="true"]::after{
+    content: url('./grace_logo.svg');
+    text-align: center;
+    position: absolute;
+    visibility: visible;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+	animation: pulse 2s infinite;
+}
+
+
+/* GLOBAL LOADER (Fullscreen) */ /* Note: also used for app initial load */
+*[class="global-loader"][data-dash-is-loading="true"],
+#react-entry-point ._dash-loading,
+#react-entry-point ._dash-loading-callback[data-dash-initial-loading="true"] { /* #react-entry-point ._dash-loading-callback */
+    visibility: hidden;
+}
+/* Backdrop */
+*[class="global-loader"][data-dash-is-loading="true"]::before, 
+#react-entry-point ._dash-loading::before,
+#react-entry-point ._dash-loading-callback[data-dash-initial-loading="true"]::before { /* #react-entry-point ._dash-loading-callback::before  */
+    content: "";
+    visibility: visible;
+    background-color: #fff;
+    /* background-color: #0000004d; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+/* Loading animation */
+*[class="global-loader"][data-dash-is-loading="true"]::after,
+#react-entry-point ._dash-loading::after,
+#react-entry-point ._dash-loading-callback[data-dash-initial-loading="true"]::after { /* #react-entry-point ._dash-loading-callback::after */
+    content: url('./grace_logo.svg');
+    text-align: center;
+    position: fixed;
+    visibility: visible;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+	animation: pulse 2s infinite;
+}
+*[class="global-loader"][data-dash-is-loading="true"]::before {
+    background-color: #0000004d;
+}
+#react-entry-point ._dash-loading::before, 
+.global-loader.Hardback,
+#react-entry-point ._dash-loading-callback[data-dash-initial-loading="true"]::before { /* #react-entry-point ._dash-loading-callback::before  */
+    background-color: #fff !important;
+}
+
+/* Disable local loaders when global is running */
+*[class="global-loader"][data-dash-is-loading="true"] ~ * .local-loader-img::before,
+*[class="global-loader"][data-dash-is-loading="true"] ~ * .local-loader-img::after,
+*[class="global-loader"][data-dash-is-loading="true"] ~ * .local-loader-spinner-sm,
+*[class="global-loader"][data-dash-is-loading="true"] ~ * .local-loader-spinner  {
+    visibility: hidden;
+}
+
+
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+
+	70% {
+		transform: translate(-50%, -50%) scale(1.05);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+
+
+/* Plot animation */
+

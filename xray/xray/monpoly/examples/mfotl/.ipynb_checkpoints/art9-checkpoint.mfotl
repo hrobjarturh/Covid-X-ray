@@ -1,0 +1,4 @@
+assessmentAnswer(id,assessment,section) IMPLIES EVENTUALLY[0,100d] verification(id,_)
+AND (assessment = "analysisOfRisk" OR assessment = "riskMeasures") 
+AND ((section = "9.2.a" OR section = "9.2.b" OR section = "9.2.c")
+OR (section = "9.4.a" OR section = "9.4.b" OR section = "9.4.c"))

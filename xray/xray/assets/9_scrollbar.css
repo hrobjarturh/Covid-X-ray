@@ -1,0 +1,35 @@
+
+/*#### Scrollbar costumization ####*/
+/* Firefox */
+html {
+    /* overflow-y: scroll; */
+    scrollbar-color: #9e9e9e;
+    scrollbar-width: thin;
+    /* overflow-x: hidden; */
+  }
+  
+  /* Chrome */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #dbdbdb80;
+    border-radius: 50px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #9e9e9e80;
+    border-radius: 50px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9e4d23;
+  }
+  /*#### Scrollbar costumization END ####*/
+  
